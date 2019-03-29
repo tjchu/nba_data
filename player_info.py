@@ -27,11 +27,12 @@ def find_player(name):
 			height = "N/A"
 
 		print("----")
-		print("Player with name '%s' found! Here is some information about him:" % name)
 		print("\tFull Name: %s" % full_name)
 		print("\tSchool: %s" % school)
 		print("\tHeight: %s" % height)
+		#print("\tDraft Year: %s" % draft_year)
 		print("----")
+	return
 
 """
 lebron_info = commonplayerinfo.CommonPlayerInfo(player_id=2544)
@@ -45,3 +46,4 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 
 	find_player(args.name)
+	sys.exit(0)
