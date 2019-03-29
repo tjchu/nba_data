@@ -12,7 +12,7 @@ def find_player(name):
 		sys.exit(0)
 	if len(player_search) > 1:
 		plural = "s"
-	print("Found player%s matching the name '%s'" % (plural, name)) 
+	print("Found player%s matching the name '%s'!" % (plural, name)) 
 	for player in player_search:
 		player_id = player['id']
 		player_info = commonplayerinfo.CommonPlayerInfo(player_id=player_id).get_normalized_dict()
@@ -30,8 +30,6 @@ def find_player(name):
 		print("\tFull Name: %s" % full_name)
 		print("\tSchool: %s" % school)
 		print("\tHeight: %s" % height)
-		#print("\tDraft Year: %s" % draft_year)
-		print("----")
 	return
 
 """
