@@ -17,15 +17,7 @@ def find_player(name):
 		player_id = player['id']
 		player_info = commonplayerinfo.CommonPlayerInfo(player_id=player_id).get_normalized_dict()
 
-		# Player Information
-		full_name = player['full_name']
-		school = player_info['CommonPlayerInfo'][0]['SCHOOL']
-		if '-' in player_info['CommonPlayerInfo'][0]['HEIGHT']:
-			height = player_info['CommonPlayerInfo'][0]['HEIGHT'].split('-')
-			height = "%s'%s''" % (height[0], height[1])
-		else: 
-			height = "N/A"
-
+		# Display the players' information
 		print("----")
 		for info_key, info_value in player_info['CommonPlayerInfo'][0].items():
 			print(info_key + ": " + str(info_value))
