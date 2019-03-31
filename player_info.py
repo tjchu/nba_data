@@ -27,9 +27,9 @@ def find_player(name):
 			height = "N/A"
 
 		print("----")
-		print("\tFull Name: %s" % full_name)
-		print("\tSchool: %s" % school)
-		print("\tHeight: %s" % height)
+		for info_key, info_value in player_info['CommonPlayerInfo'][0].items():
+			print(info_key + ": " + str(info_value))
+
 	return
 
 """
