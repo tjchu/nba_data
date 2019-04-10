@@ -18,12 +18,12 @@ def find_player(name):
 		player_info = commonplayerinfo.CommonPlayerInfo(player_id=player_id).get_normalized_dict()
 
 		# Display the players' information
-		print("----General Information----")
-		for info_key, info_value in player_info['CommonPlayerInfo'][0].items():
-			print(info_key + ": " + str(info_value))
+		#print("----General Information----")
+		#for info_key, info_value in player_info['CommonPlayerInfo'][0].items():
+		#	print(info_key + ": " + str(info_value))
 		print("----Headline Stats----")
-		for stats_key, stats_value in player_info["PlayerHeadlineStats"]:
-			if stats_key in ["PLAYER_ID", "PLAYER_NAME", "TimeFrame",]:
+		for stats_key, stats_value in player_info["PlayerHeadlineStats"][0].items():
+			if stats_key in ["PLAYER_ID", "PLAYER_NAME"]:
 				continue
 			print(stats_key + ": " + str(stats_value))
 
