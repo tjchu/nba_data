@@ -3,7 +3,7 @@ from nba_api.stats.static import players
 import argparse
 import sys
 
-
+# Output NBA player headline info
 def find_player(name):
 	player_search = players.find_players_by_full_name(name)
 	plural = ""
@@ -37,7 +37,7 @@ print(lebron_info.get_normalized_dict()['CommonPlayerInfo'])
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
-	parser.add_argument("-n", "--name", help="Player Full Name", type=str)
+	parser.add_argument("-n", "--name", help="Player Full Name", type=str, required=True)
 	args = parser.parse_args()
 
 	find_player(args.name)
