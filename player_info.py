@@ -2,6 +2,7 @@ from nba_api.stats.endpoints import commonplayerinfo
 from nba_api.stats.static import players
 import argparse
 from util import info, err
+import sys
 
 # Output NBA player headline info
 def find_player(name):
@@ -43,8 +44,15 @@ print(lebron_info.get_normalized_dict()['CommonPlayerInfo'])
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
-	parser.add_argument("-n", "--name", help="Player Full Name", type=str, required=True)
+	parser.add_argument("-n", "--name", help="Player Full Name", type=str)
+	parser.add_argument("-d", "--date", help="Date of the game played, defaults to latest game if not entered", type=str)
 	args = parser.parse_args()
-	info("NBA Player Analysis script started.")
-	find_player(args.name)
+	info("NBA Player Analysis program started.")
+	player_name = None
+	if not args.name:
+		while not player_name: 
+			player_name = input("Please input NBA player name: ")
+	else:
+		player_name = args.name
+	find_player(player_name)
 	sys.exit(0)
