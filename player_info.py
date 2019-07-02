@@ -30,6 +30,9 @@ def find_player(name):
 
 	return
 
+def player_average_statistics(player_id, player_name):
+	pass
+
 def player_exists(name):
 	search_result = find_players_by_full_name(name)
 	if not search_result: 
