@@ -5,8 +5,11 @@ from util import info, err
 import sys
 
 # Output NBA player headline info
-def find_player(name):
-	player_search = players.find_players_by_full_name(name)
+def find_player(player_name):
+	return
+
+def player_average_stats(player_name):
+	player_search = players.find_players_by_full_name(player_name)
 	plural = ""
 	if len(player_search) == 0:
 		print("No player with name '%s' found." % name)
@@ -22,16 +25,10 @@ def find_player(name):
 		#print("----General Information----")
 		#for info_key, info_value in player_info['CommonPlayerInfo'][0].items():
 		#	print(info_key + ": " + str(info_value))
-		print("----Headline Stats----")
 		for stats_key, stats_value in player_info["PlayerHeadlineStats"][0].items():
 			if stats_key in ["PLAYER_ID", "PLAYER_NAME"]:
 				continue
 			print(stats_key + ": " + str(stats_value))
-
-	return
-
-def player_average_statistics(player_id, player_name):
-	pass
 
 def player_exists(name):
 	search_result = find_players_by_full_name(name)
